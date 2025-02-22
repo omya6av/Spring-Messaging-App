@@ -1,10 +1,7 @@
 package com.hello.uc1;
 
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class HelloController {
@@ -18,4 +15,12 @@ public class HelloController {
     public String sayHelloWithName(@RequestParam String name ){
         return "Hello " + name + " from BridgeLabz";
     }
+
+    @PostMapping("/uc4")
+    public String sayHello(@RequestBody UserDTO userDTO){
+        return "Hello "+ userDTO.getFirstName() +" "+ userDTO.getLastName()+ " from bridgeLabz";
+    }
+
+
+
 }
