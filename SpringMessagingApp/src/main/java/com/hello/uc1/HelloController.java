@@ -16,10 +16,23 @@ public class HelloController {
         return "Hello " + name + " from BridgeLabz";
     }
 
+
+    @GetMapping("/uc3{name}")
+    public String sayHelloFromPathVariable(@PathVariable String name ){
+        return "Hello "+ name + " from bridge labz"; 
+    }
+
+
     @PostMapping("/uc4")
     public String sayHello(@RequestBody UserDTO userDTO){
         return "Hello "+ userDTO.getFirstName() +" "+ userDTO.getLastName()+ " from bridgeLabz";
     }
+
+    @PutMapping("/uc5/{firstName}")
+    public String sayHelloWithPut(@PathVariable String firstName, @RequestParam String lastName ){
+        return "Hello "+ firstName +" "+ lastName+ " from birdge labz";
+    }
+
 
 
 
